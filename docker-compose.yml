@@ -30,7 +30,7 @@ services:
     image: nginx:1.17
     restart: always
     volumes:
-      - /opt/CTFd/conf/nginx:/etc/nginx
+      - ./conf/nginx/http.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
     depends_on:
@@ -45,7 +45,7 @@ services:
       - MYSQL_PASSWORD=ctfd
       - MYSQL_DATABASE=ctfd
     volumes:
-      - /opt/CTFd/CTFd/mysql:/var/lib/mysql
+      - .data/mysql:/var/lib/mysql
     networks:
         internal:
     # This command is required to set important mariadb defaults

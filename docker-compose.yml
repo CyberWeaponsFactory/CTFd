@@ -17,9 +17,9 @@ services:
       - ERROR_LOG=-
       - REVERSE_PROXY=true
     volumes:
-      - /opt/CTFd/CTFd/logs:/var/log/CTFd
-      - /opt/CTFd/CTFd/uploads:/var/uploads
-      - /opt/CTFd/CTFd:/opt/CTFd:ro
+      - .data/CTFd/logs:/var/log/CTFd
+      - .data/CTFd/uploads:/var/uploads
+      - .:/opt/CTFd:ro
     depends_on:
       - db
     networks:

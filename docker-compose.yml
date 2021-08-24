@@ -30,7 +30,7 @@ services:
     image: nginx:1.17
     restart: always
     volumes:
-      - /opt/CTFd/conf/nginx/http.conf:/etc/nginx/nginx.conf
+      - /opt/CTFd/conf/nginx:/etc/nginx
     ports:
       - 80:80
     depends_on:
